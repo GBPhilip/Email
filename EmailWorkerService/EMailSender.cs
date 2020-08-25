@@ -1,5 +1,4 @@
-﻿using EmailWorkerService;
-using Microsoft.Extensions.Options;
+﻿using Microsoft.Extensions.Options;
 using Routeco.Data.EmailRepository;
 using Routeco.EmailWorkService.Domain;
 using System;

@@ -1,4 +1,4 @@
-﻿namespace EmailWorkerService
+﻿namespace Routeco.EmailWorkerService
 {
     public class EmailDetailsConfiguration
     {
