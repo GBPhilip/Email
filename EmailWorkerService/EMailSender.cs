@@ -75,8 +75,9 @@ namespace Routeco.EmailWorkerService
                         if (attempts == emailDetailsConfiguration.Value.MaxTries)
                         {
                             emailrepository.MoveToError(messageId, ex.Message);
+                            return;
                         }
-                        await Delay(attempts, stoppingToken);
+                            await Delay(attempts, stoppingToken);
                     }
                 }
 
