@@ -33,12 +33,14 @@ namespace EmailWorkerService
                 var emailRequest = emailRepository.Read();
                 while (emailRequest != null)
                 {
+                    _logger.LogInformation("Processing email id {id} at {time}", emailRequest.Id, DateTimeOffset.Now);
                     var emailDetails = JsonConvert.DeserializeObject<EmailDetails>(emailRequest.Message);
                     emailDetails.Id = emailRequest.Id;
                     await emailSender.SendEmailAsync(emailDetails, stoppingToken);
                     emailRequest = emailRepository.Read();
                 }
-                await Task.Delay(1000, stoppingToken);
+                _logger.LogInformation("No emails queued at {time}", DateTimeOffset.Now);
+                await Task.Delay(7000, stoppingToken);
             }
         }
     }

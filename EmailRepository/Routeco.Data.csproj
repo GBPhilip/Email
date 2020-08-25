@@ -2,8 +2,8 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
-    <RootNamespace>Routeco.Data.EmailRepository</RootNamespace>
-    <AssemblyName>Routeco.Data.EmailRepository</AssemblyName>
+    <RootNamespace>Routeco.Data</RootNamespace>
+    <AssemblyName>Routeco.Data</AssemblyName>
   </PropertyGroup>
 
   <ItemGroup>

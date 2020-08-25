@@ -5,7 +5,7 @@ VisualStudioVersion = 16.0.30204.135
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EmailWorkerService", "EmailWorkerService\EmailWorkerService.csproj", "{AF839D8B-BBF6-4E80-B775-FF1E3041339B}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Routeco.Data.EmailRepository", "EmailRepository\Routeco.Data.EmailRepository.csproj", "{807FCCE1-349D-4A4A-B967-90116E574EC9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Routeco.Data", "EmailRepository\Routeco.Data.csproj", "{807FCCE1-349D-4A4A-B967-90116E574EC9}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Routeco.EmailWorkService.Domain", "Routeco.EmailWorkService.Domain\Routeco.EmailWorkService.Domain.csproj", "{5D6BDA71-8F38-4D0F-987C-515528DEB0B7}"
 EndProject
