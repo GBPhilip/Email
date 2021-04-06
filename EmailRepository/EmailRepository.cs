@@ -63,6 +63,7 @@ namespace Routeco.Data.EmailRepository
             connection.Open();
             using var transaction = connection.BeginTransaction();
             Delete(id, connection, transaction);
+            transaction.Commit();
         }
 
         public void MoveToError(int id, string exception)
@@ -79,7 +80,7 @@ namespace Routeco.Data.EmailRepository
             try
             {
                 InsertError(id, exception, connection, transaction: transaction);
-                Delete(id, connection, transaction: transaction);
+                Delete(id, connection, transaction);
                 transaction.Commit();
             }
             catch (Exception ex)

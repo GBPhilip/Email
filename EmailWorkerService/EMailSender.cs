@@ -65,8 +65,6 @@ namespace Routeco.EmailWorkerService
                             client.Send(mail);
                         }
                         emailSent = true;
-                        //Todo: separate try catch email sent delete failed what do we do
-                        emailrepository.Delete(messageId);
                     }
                     catch (Exception ex)
                     {
@@ -76,7 +74,18 @@ namespace Routeco.EmailWorkerService
                             emailrepository.MoveToError(messageId, ex.Message);
                             return;
                         }
-                            await Delay(attempts, stoppingToken);
+                        await Delay(attempts, stoppingToken);
+                    }
+                    if (emailSent)
+                    {
+                        try
+                        {
+                            emailrepository.Delete(messageId);
+                        }
+                        catch (Exception ex)
+                        {
+                            // todo: log message - email has been sent
+                        }
                     }
                 }
 
